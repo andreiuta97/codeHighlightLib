@@ -2,8 +2,15 @@
 
 require "vendor/autoload.php";
 
+use HighlightLib\Classifier\Classifier;
 use HighlightLib\CodeHighlight;
-use HighlightLib\Tokenizer\TokenizerClass;
+use HighlightLib\Tokenizer\WhiteSpaceTokenizer;
 
 $verify = new CodeHighlight();
-print_r($verify->highlight("cfhsio fsjfh \n id \n hai"));
+$array = $verify->highlight('false 1 true " . { ( ) ');
+
+$verify2 = new Classifier();
+foreach ($array as $value) {
+    echo $verify2->classify($value)->get_CSSType();
+    echo " ";
+}

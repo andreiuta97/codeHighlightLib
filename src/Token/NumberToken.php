@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace HighlightLib\Token;
+
 use HighlightLib\Contracts\TokenInterface;
 
 class NumberToken implements TokenInterface

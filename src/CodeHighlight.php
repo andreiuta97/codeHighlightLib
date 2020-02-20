@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace HighlightLib;
 
 use HighlightLib\Tokenizer\WhiteSpaceTokenizer;
+use HighlightLib\Classifier\Classifier;
 
 class CodeHighlight
 {
