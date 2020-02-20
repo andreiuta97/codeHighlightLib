@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace HighlightLib;
 
+use HighlightLib\Tokenizer\TokenizerClass;
+
 class CodeHighlight
 {
-    private $tokenizer;
+    /*private $tokenizer;
     private $classifier;
     private $assembler;
+
 
     public function __construct(TokenizerInterface $tokenizer, ClasifierInterface $classifier, AssemblerInterface $assembler)
     {
@@ -16,11 +19,11 @@ class CodeHighlight
         $this->classifier = $classifier;
         $this->assembler = $assembler;
     }
+    */
 
-    public function highlight(string $string): string
+    public function highlight(string $string): array
     {
-        // use the defined classes/services to perform the highlighting on $string
-        $string = "codehilight";
-        return $string;
+        $out = new TokenizerClass();
+        return $out->tokenize($string);
     }
 }
