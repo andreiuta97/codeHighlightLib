@@ -6,7 +6,7 @@ namespace HighlightLib\Tokenizer;
 
 use HighlightLib\Contracts\TokenizerInterface;
 
-class TokenizerClass implements TokenizerInterface
+class WhiteSpaceTokenizer implements TokenizerInterface
 {
     public function tokenize(string $in): array
     {

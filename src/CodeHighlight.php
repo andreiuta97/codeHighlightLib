@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace HighlightLib;
 
-use HighlightLib\Tokenizer\TokenizerClass;
+use HighlightLib\Tokenizer\WhiteSpaceTokenizer;
 
 class CodeHighlight
 {
@@ -23,7 +23,7 @@ class CodeHighlight
 
     public function highlight(string $string): array
     {
-        $out = new TokenizerClass();
+        $out = new WhiteSpaceTokenizer();
         return $out->tokenize($string);
     }
 }
