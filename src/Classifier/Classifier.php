@@ -12,14 +12,14 @@ class Classifier implements ClassifierInterface
 {
     private $config;
 
-    public function classify(string $stringToken): TokenInterface
+    public function classify(array $stringToken): TokenInterface
     {
         $this->getConfig();
         foreach ($this->config as $key => $value) {
-            if (preg_match($key, $stringToken))
-                return new $value($stringToken);
+            if (preg_match($key, $stringToken[0]))
+                return new $value($stringToken[0],$stringToken[1]);
         }
-        return new NormalToken($stringToken);
+        return new NormalToken($stringToken[0], $stringToken[1]);
 
     }
 

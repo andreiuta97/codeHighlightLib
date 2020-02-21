@@ -14,8 +14,20 @@ class Assembler implements AssemblerInterface
     {
         // <span class="atom"> true </span>
         $stringTokens = "";
+        $index = 0;
         foreach ($tokens as $string) {
+            if($index !== 0) {
+                $offset = $string->getOffset();
+                $len = $tokens[$index-1]->getOffset() + strlen($tokens[$index-1]->getLength());
+                $lun = $offset - $len;
+                while ($lun > 0) {
+                    $stringTokens .= " ";
+                    $lun--;
+                }
+            }
             $stringTokens .= $string->getText();
+            $index++;
+
         }
         return $stringTokens;
 
