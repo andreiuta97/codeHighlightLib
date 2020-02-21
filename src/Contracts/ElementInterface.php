@@ -7,5 +7,8 @@ namespace HighlightLib\Contracts;
 
 interface ElementInterface
 {
+    /**
+     * @return string
+     */
     public function getText (): string ;
 }

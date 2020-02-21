@@ -2,15 +2,11 @@
 
 require "vendor/autoload.php";
 
-//include 'style\colors.css';
-
-
 use HighlightLib\Tokenizer\WhiteSpaceTokenizer;
 use HighlightLib\Classifier\Classifier;
 use HighlightLib\Assembler\Assembler;
 use HighlightLib\CodeHighlight;
 use HighlightLib\Config;
-
 
 $tokenizer = new WhiteSpaceTokenizer();
 $classifier = new Classifier();

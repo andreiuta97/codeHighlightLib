@@ -12,19 +12,43 @@ use HighlightLib\Contracts\AssemblerInterface;
 
 class CodeHighlight
 {
+    /**
+     * @var TokenizerInterface
+     */
     private $tokenizer;
+
+    /**
+     * @var ClassifierInterface
+     */
     private $classifier;
+
+    /**
+     * @var AssemblerInterface
+     */
     private $assembler;
 
-
-    public function __construct(TokenizerInterface $tokenizer, ClassifierInterface $classifier, AssemblerInterface $assembler)
+    /**
+     * CodeHighlight constructor.
+     * @param TokenizerInterface $tokenizer
+     * @param ClassifierInterface $classifier
+     * @param AssemblerInterface $assembler
+     */
+    public function __construct
+    (
+        TokenizerInterface $tokenizer,
+        ClassifierInterface $classifier,
+        AssemblerInterface $assembler
+    )
     {
         $this->tokenizer = $tokenizer;
         $this->classifier = $classifier;
         $this->assembler = $assembler;
     }
 
-
+    /**
+     * @param string $string
+     * @return string
+     */
     public function highlight(string $string): string
     {
 
@@ -35,7 +59,5 @@ class CodeHighlight
         }
 
         return $this->assembler->assemble($stringToken);
-
-
     }
 }

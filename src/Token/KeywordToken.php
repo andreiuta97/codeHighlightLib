@@ -7,7 +7,9 @@ namespace HighlightLib\Token;
 
 class KeywordToken extends AbstractToken
 {
-
+    /**
+     * @inheritDoc
+     */
     public function getCSSType(): string
     {
         return "keyword";
