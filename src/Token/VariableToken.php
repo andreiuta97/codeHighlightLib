@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-use HighlightLib\Contracts\TokenInterface;
 
-class VariableToken implements TokenInterface
+class VariableToken extends AbstractToken
 {
 
-    public function get_CSSType(): string
+    public function getCSSType(): string
     {
-        return "Variable";
+        return "variable";
     }
 }

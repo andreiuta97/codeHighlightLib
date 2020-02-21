@@ -6,9 +6,7 @@ namespace HighlightLib\Classifier;
 
 use HighlightLib\Contracts\ClassifierInterface;
 use HighlightLib\Contracts\TokenInterface;
-use HighlightLib\Config;
-use HighlightLib\Token\AtomToken;
-use TheSeer\Tokenizer\Token;
+use HighlightLib\Token\NormalToken;
 
 class Classifier implements ClassifierInterface
 {
@@ -17,13 +15,12 @@ class Classifier implements ClassifierInterface
     public function classify(string $stringToken): TokenInterface
     {
         $this->getConfig();
-        //var_dump('AICI!', $this->config);
         foreach ($this->config as $key => $value) {
             if (preg_match($key, $stringToken))
-                return new $value;
+                return new $value($stringToken);
         }
+        return new NormalToken($stringToken);
 
-        //return new AtomToken();
     }
 
     private function getConfig()

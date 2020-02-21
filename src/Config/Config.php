@@ -11,7 +11,7 @@ return Array(
     '/\d+/' => "HighlightLib\Token\NumberToken",
     '/^\$[a-zA-Z_]\w*$/' => "HighlightLib\Token\VariableToken",
     '/^(\{|\})$/' => "HighlightLib\Token\BracketToken",
-    '/^(?:.|,|;|:|‘|“|\[|\]|\(|\))$/' => "HighlightLib\Token\PunctuationToken",
+    '/\.|,|;|:|‘|“|\[|\]|\(|\)/' => "HighlightLib\Token\PunctuationToken",
     $atomRegex => "HighlightLib\Token\AtomToken",
     $builtinRegex => "HighlightLib\Token\BuiltinToken",
     $keywordsRegex => "HighlightLib\Token\KeywordToken"

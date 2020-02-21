@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-use HighlightLib\Contracts\TokenInterface;
 
-class BuiltinToken implements TokenInterface
+class BuiltinToken extends AbstractToken
 {
 
-    public function get_CSSType(): string
+    public function getCSSType(): string
     {
-        return "Builtin";
+        return "builtin";
     }
 }

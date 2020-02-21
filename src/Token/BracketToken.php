@@ -4,13 +4,11 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-use HighlightLib\Contracts\TokenInterface;
-
-class BracketToken implements TokenInterface
+class BracketToken extends AbstractToken
 {
 
-    public function get_CSSType(): string
+    public function getCSSType(): string
     {
-        return "Bracket";
+        return "bracket";
     }
 }

@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-use HighlightLib\Contracts\TokenInterface;
 
-class PunctuationToken implements TokenInterface
+class PunctuationToken extends AbstractToken
 {
 
-    public function get_CSSType(): string
+    public function getCSSType(): string
     {
-        return "Punctuation";
+        return "punctuation";
     }
 }

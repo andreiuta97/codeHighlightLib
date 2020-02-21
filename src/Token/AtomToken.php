@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace HighlightLib\Token;
 
-use HighlightLib\Contracts\TokenInterface;
-
-class AtomToken implements TokenInterface
+class AtomToken extends AbstractToken
 {
-
-    public function get_CSSType(): string
+    public function getCSSType(): string
     {
-        return "Atom";
+        return "atom";
     }
 }
