@@ -1,0 +1,7 @@
+.atom { color : blue; }
+.bracket { color: rebeccapurple; }
+.builtin { color: red; }
+.keyword { color: yellow; }
+.number { color: green; }
+.punctuation { color: brown; }
+.variable { color: deeppink; }
